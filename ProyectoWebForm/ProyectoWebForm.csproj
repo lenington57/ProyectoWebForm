@@ -79,8 +79,10 @@
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registros\UsuarioWF.aspx" />
+    <Content Include="Resources\user.png" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -94,6 +96,13 @@
     </Compile>
     <Compile Include="Consultas\CUsuarioWF.aspx.designer.cs">
       <DependentUpon>CUsuarioWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

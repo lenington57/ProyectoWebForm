@@ -40,13 +40,31 @@ namespace ProyectoWebForm.Consultas {
         protected global::System.Web.UI.WebControls.TextBox CriterioTextBox;
         
         /// <summary>
-        /// BuscarLinkButton control.
+        /// buscarLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BuscarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton buscarLinkButton;
+        
+        /// <summary>
+        /// DesdeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DesdeTextBox;
+        
+        /// <summary>
+        /// HastaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HastaTextBox;
         
         /// <summary>
         /// UsuarioGridView control.

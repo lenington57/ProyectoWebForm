@@ -8,12 +8,20 @@
         <div class="container">
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server" Text="UsuarioId"></asp:Label>
-                <asp:Button class="btn btn-outline-success my-2 my-sm-0" ID="BuscarButton" runat="server" Text="Buscar" />
+                <asp:Button class="btn btn-outline-success my-2 my-sm-0" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
                 <asp:TextBox class="form-control" ID="usuarioIdTextBox" Text="0" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
-    <asp:Image ID="UsuarioImage" runat="server" Height="474px" ImageUrl="~/Resources/icono-nuevo-usuario-png-4.png" runat="server" Width="409px" AlternateText="Imagen no disponible" ImageAlign="right" />
+    <div class="col-md-6 col-md-offset-3">
+        <div class="container">
+            <div class="form-group">
+                <asp:Label ID="Label10" runat="server" Text="Fecha"></asp:Label>
+                <asp:TextBox class="form-control" ID="fechaTextBox" type="date" placeholder="###-###-####" runat="server"></asp:TextBox>
+            </div>
+        </div>
+    </div>
+    <asp:Image ID="UsuarioImage" runat="server" Height="474px" ImageUrl="~/Resources/user.png" runat="server" Width="409px" AlternateText="Imagen no disponible" ImageAlign="right" />
     <div class="col-md-6 col-md-offset-3">
         <div class="container">
             <div class="form-group">
@@ -27,6 +35,14 @@
             <div class="form-group">
                 <asp:Label ID="Label3" runat="server" Text="Número de Teléfono"></asp:Label>
                 <asp:TextBox class="form-control" ID="noTelefonoTextBox" placeholder="###-###-####" runat="server"></asp:TextBox>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="container">
+            <div class="form-group">
+                <asp:Label ID="Label9" runat="server" Text="Número de Celular"></asp:Label>
+                <asp:TextBox class="form-control" ID="noCelularTextBox" placeholder="###-###-####" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
@@ -65,26 +81,12 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-md-offset-3">
-        <div class="container">
-            <div class="form-group">
-                <asp:Label ID="Label8" runat="server" Text="Permisos"></asp:Label>
-                <asp:DropDownList class="form-control" ID="permisosDropDownList" runat="server">
-                    <asp:ListItem>Nivel 1</asp:ListItem>
-                    <asp:ListItem>Nivel 2</asp:ListItem>
-                    <asp:ListItem>Nivel 3</asp:ListItem>
-                </asp:DropDownList>
-                <asp:Button class="btn btn-outline-success my-2 my-sm-0" ID="agregarButton" runat="server" Text="Agregar" />
-            </div>
-            <asp:GridView ID="detalleGridView" runat="server"></asp:GridView>
-        </div>
-    </div>
     <div class="panel-footer">
             <div class="text-center">
                 <div class="form-group" style="display: inline-block">
-                    <asp:Button Text="Nuevo" class="btn btn-primary btn-sm" runat="server" ID="Button1"/>
-                    <asp:Button Text="Guardar" class="btn btn-success btn-sm" runat="server" ID="GuadarButton"/>
-                    <asp:Button Text="Eliminar" class="btn btn-danger btn-sm" runat="server" ID="EliminarButton" />
+                    <asp:Button Text="Nuevo" class="btn btn-primary btn-sm" runat="server" ID="nuevoButton" OnClick="nuevoButton_Click"/>
+                    <asp:Button Text="Guardar" class="btn btn-success btn-sm" runat="server" ID="guadarButton" OnClick="guadarButton_Click"/>
+                    <asp:Button Text="Eliminar" class="btn btn-danger btn-sm" runat="server" ID="eliminarButton" OnClick="eliminarButton_Click" />
                 </div>
             </div>
         </div>

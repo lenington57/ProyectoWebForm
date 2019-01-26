@@ -16,17 +16,17 @@
             <br>
             <div class="card">
                 <article class="card-body">
-                    <a href="http://localhost:55115/Registros/UsuarioWF.aspx" class="float-right btn btn-outline-primary">Registrarse</a>
+                    <a href="http://localhost:55115/Registros/UsuarioWF.aspx" class="float-right btn btn-outline-success">Registrarse</a>
                     <h4 class="card-title mb-4 mt-1">Iniciar Sesión</h4>
                     <form>
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Label">Email</asp:Label>
+                            <asp:Label ID="Label1" runat="server" class="text-success" Text="Label">Email</asp:Label>
                             <asp:TextBox class="form-control" ID="emailTextBox" placeholder="micorreo@gmail.com" type="email" runat="server"></asp:TextBox>
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <a class="float-right" href="#">Olvidó su contraseña?</a>
-                            <asp:Label ID="Label2" runat="server" Text="Contraseña"></asp:Label>
+                            <a class="float-right" href="#" style="color: #008000">Olvidó su contraseña?</a>
+                            <asp:Label ID="Label2" runat="server" class="text-success" Text="Contraseña"></asp:Label>
                             <asp:TextBox class="form-control" ID="passwordTextBox" placeholder="******" type="password" runat="server"></asp:TextBox>
                         </div>
                         <!-- form-group// -->
@@ -41,7 +41,7 @@
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <asp:Button ID="iniciarSButton" type="submit" class="btn btn-primary btn-block" runat="server" Text="Iniciar Sesión"/>
+                            <asp:Button ID="iniciarSButton" type="submit" class="btn btn-success btn-block" runat="server" Text="Iniciar Sesión"/>
                         </div>
                         <!-- form-group// -->
                     </form>
