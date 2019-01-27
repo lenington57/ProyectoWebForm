@@ -13,5 +13,10 @@ namespace ProyectoWebForm
         {
 
         }
+
+        protected void iniciarSButton_Click(object sender, EventArgs e)
+        {
+            BLL.UsuarioRepositorio.Autenticar(emailTextBox.Text, passwordTextBox.Text, this);
+        }
     }
 }

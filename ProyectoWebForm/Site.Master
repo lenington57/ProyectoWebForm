@@ -30,7 +30,7 @@
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-success">
-                <a class="navbar-brand" href="http://localhost:49836/Default.aspx">Ventas.do</a>
+                <a class="navbar-brand" href="http://localhost:55115/Default.aspx" style="font-weight: bold">Ventas.do</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -72,7 +72,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Quijote Factura</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Ventas.do</p>
             </footer>
         </div>
     </form>

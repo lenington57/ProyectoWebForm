@@ -9,19 +9,22 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" style="color: #008000; font-weight: bold;">Ventas.do</h1>
+            <p class="lead">Donde registras tus ventas desde el alcance de tu casa.</p>
+        </div>
+    </div>
     <div class="form-row justify-content-center">
         <aside class="col-sm-4">
-            <br>
-            <br>
             <div class="card">
                 <article class="card-body">
                     <a href="http://localhost:55115/Registros/UsuarioWF.aspx" class="float-right btn btn-outline-success">Registrarse</a>
-                    <h4 class="card-title mb-4 mt-1">Iniciar Sesión</h4>
+                    <h4 class="card-title mb-4 mt-1" style="color: #008000">Iniciar Sesión</h4>
                     <form>
                         <div class="form-group">
                             <asp:Label ID="Label1" runat="server" class="text-success" Text="Label">Email</asp:Label>
-                            <asp:TextBox class="form-control" ID="emailTextBox" placeholder="micorreo@gmail.com" type="email" runat="server"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="emailTextBox" type="email" runat="server"></asp:TextBox>
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
@@ -33,7 +36,7 @@
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox">
+                                    <input type="checkbox" style="color: #008000">
                                     Guardar contraseña
                                 </label>
                             </div>
@@ -41,7 +44,7 @@
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <asp:Button ID="iniciarSButton" type="submit" class="btn btn-success btn-block" runat="server" Text="Iniciar Sesión"/>
+                            <asp:Button ID="iniciarSButton" type="submit" class="btn btn-success btn-block" runat="server" Text="Iniciar Sesión" OnClick="iniciarSButton_Click" />
                         </div>
                         <!-- form-group// -->
                     </form>

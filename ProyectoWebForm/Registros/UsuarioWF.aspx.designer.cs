@@ -40,6 +40,24 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox usuarioIdTextBox;
         
         /// <summary>
+        /// usuarioIdRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usuarioIdRequiredFieldValidator;
+        
+        /// <summary>
+        /// usuarioIdRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator usuarioIdRegularExpressionValidator;
+        
+        /// <summary>
         /// Label10 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +103,60 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
         
         /// <summary>
+        /// nombreRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator nombreRequiredFieldValidator;
+        
+        /// <summary>
+        /// nombreRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator nombreRegularExpressionValidator;
+        
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// usernameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox usernameTextBox;
+        
+        /// <summary>
+        /// usernameRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameRequiredFieldValidator;
+        
+        /// <summary>
+        /// usernameRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator usernameRegularExpressionValidator;
+        
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +175,24 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox noTelefonoTextBox;
         
         /// <summary>
+        /// noTelefonoRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator noTelefonoRequiredFieldValidator;
+        
+        /// <summary>
+        /// noTelefonoRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator noTelefonoRegularExpressionValidator;
+        
+        /// <summary>
         /// Label9 control.
         /// </summary>
         /// <remarks>
@@ -119,6 +209,24 @@ namespace ProyectoWebForm.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox noCelularTextBox;
+        
+        /// <summary>
+        /// noCelularRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator noCelularRequiredFieldValidator;
+        
+        /// <summary>
+        /// noCelularRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator noCelularRegularExpressionValidator;
         
         /// <summary>
         /// Label4 control.
@@ -155,6 +263,15 @@ namespace ProyectoWebForm.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
+        
+        /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
         
         /// <summary>
         /// Label6 control.

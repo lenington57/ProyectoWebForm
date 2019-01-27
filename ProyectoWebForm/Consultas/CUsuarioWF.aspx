@@ -9,7 +9,7 @@
         <div class="form-group col-md-2">
             <asp:Label Text="Filtro" class="text-success" runat="server" />
             <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
-                <asp:ListItem></asp:ListItem>
+                <asp:ListItem>Todo</asp:ListItem>
                 <asp:ListItem>UsuarioId</asp:ListItem>
                 <asp:ListItem>Email</asp:ListItem>
                 <asp:ListItem>Usuario</asp:ListItem>
