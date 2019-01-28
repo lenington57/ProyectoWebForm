@@ -41,8 +41,8 @@
         </div>
     </div>
     <div class="form-row justify-content-center">
-        <asp:GridView ID="UsuarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#669900" GridLines="None">
-            <AlternatingRowStyle BackColor="#996600" />
+        <asp:GridView ID="UsuarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#006666" GridLines="None">
+            <AlternatingRowStyle BackColor="#999999" />
             <Columns>
                 <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
