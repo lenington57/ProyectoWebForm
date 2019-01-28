@@ -148,15 +148,6 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameRequiredFieldValidator;
         
         /// <summary>
-        /// usernameRegularExpressionValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator usernameRegularExpressionValidator;
-        
-        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -247,6 +238,15 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
+        /// emailRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailRequiredFieldValidator;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -265,13 +265,22 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
         
         /// <summary>
-        /// ValidationSummary control.
+        /// passwordRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordRequiredFieldValidator;
+        
+        /// <summary>
+        /// passwordCompareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator passwordCompareValidator;
         
         /// <summary>
         /// Label6 control.
@@ -292,6 +301,24 @@ namespace ProyectoWebForm.Registros {
         protected global::System.Web.UI.WebControls.TextBox cpasswordTextBox;
         
         /// <summary>
+        /// cpasswordRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator cpasswordRequiredFieldValidator;
+        
+        /// <summary>
+        /// cpasswordCompareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cpasswordCompareValidator;
+        
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -308,6 +335,24 @@ namespace ProyectoWebForm.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList tipoUsuarioDropDownList;
+        
+        /// <summary>
+        /// ErrorLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorLabel;
+        
+        /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
         
         /// <summary>
         /// nuevoButton control.

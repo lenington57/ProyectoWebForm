@@ -4,6 +4,7 @@ using ProyectoWebForm.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,7 +15,7 @@ namespace ProyectoWebForm.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void Limpiar()
@@ -22,6 +23,7 @@ namespace ProyectoWebForm.Registros
             usuarioIdTextBox.Text = "0";
             fechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             nombreTextBox.Text = " ";
+            usernameTextBox.Text = " ";
             noCelularTextBox.Text = "";
             noTelefonoTextBox.Text = "";
             emailTextBox.Text = "";
@@ -37,6 +39,7 @@ namespace ProyectoWebForm.Registros
             usuario.UsuarioId = ToInt(usuarioIdTextBox.Text);
             usuario.Fecha = Utils.ToDateTime(fechaTextBox.Text);
             usuario.Nombres = nombreTextBox.Text;
+            usuario.NombreUsuario = usernameTextBox.Text;
             usuario.NoTelefono = noTelefonoTextBox.Text;
             usuario.NoCelular = noCelularTextBox.Text;
             usuario.Email = emailTextBox.Text;
@@ -54,6 +57,80 @@ namespace ProyectoWebForm.Registros
             int.TryParse(valor.ToString(), out retorno);
 
             return retorno;
+        }
+
+        private bool HayErrores()
+        {
+            Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
+            Expression<Func<Usuario, bool>> filtrar = x => true;
+            Expression<Func<Usuario, bool>> filtro = x => true;
+            filtrar = t => t.Email.Equals(emailTextBox.Text);
+            filtro = t => t.NombreUsuario.Equals(usernameTextBox.Text);
+            string nombre = nombreTextBox.Text;
+            bool paso = false;
+            string s = passwordTextBox.Text;
+            string ss = cpasswordTextBox.Text;
+            int comparacion = 0;
+            comparacion = String.Compare(s, ss);
+            if (comparacion != 0)
+            {
+                passwordCompareValidator.ErrorMessage = "No Coinciden";
+                cpasswordCompareValidator.ErrorMessage = "No Coinciden";
+                paso = true;
+            }
+            if (String.IsNullOrEmpty(nombreTextBox.Text))
+            {
+                nombreRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                nombreRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(usernameTextBox.Text))
+            {
+                usernameRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                usernameRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (repositorio.GetList(filtro).Count() != 0)
+            {
+                Response.Write("<script>alert('Este UserName ya existe');</script>");
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(noTelefonoTextBox.Text))
+            {
+                noTelefonoRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                noTelefonoRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(noCelularTextBox.Text))
+            {
+                noCelularRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                noCelularRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(emailTextBox.Text))
+            {
+                emailRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                emailRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (repositorio.GetList(filtrar).Count() != 0)
+            {
+                Response.Write("<script>alert('Este email ya existe');</script>");
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                passwordRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                passwordRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(cpasswordTextBox.Text))
+            {
+                cpasswordRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
+                cpasswordRequiredFieldValidator.Enabled = true;
+                paso = true;
+            }
+            return paso;
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -88,35 +165,40 @@ namespace ProyectoWebForm.Registros
             Usuario usuario = new Usuario();
             bool paso = false;
 
-            //todo: validaciones adicionales
-            usuario = LlenaClase();
-
-            if (usuario.UsuarioId == 0)
-            {
-                paso = repositorio.Guardar(usuario);
-                Response.Write("<script>alert('Guardado');</script>");
-                Limpiar();
-            }
+            if (HayErrores())
+                return;
             else
             {
-                int id = ToInt(usuarioIdTextBox.Text);
-                usuario = repositorio.Buscar(id);
+                //todo: validaciones adicionales
+                usuario = LlenaClase();
 
-                if (usuario != null)
+                if (usuario.UsuarioId == 0)
                 {
-                    paso = repositorio.Modificar(LlenaClase());
-                    Response.Write("<script>alert('Modificado');</script>");
+                    paso = repositorio.Guardar(usuario);
+                    Response.Write("<script>alert('Guardado');</script>");
+                    Limpiar();
                 }
                 else
-                    Response.Write("<script>alert('Id no existe');</script>");
-            }
+                {
+                    int id = ToInt(usuarioIdTextBox.Text);
+                    usuario = repositorio.Buscar(id);
 
-            if (paso)
-            {
-                Limpiar();
+                    if (usuario != null)
+                    {
+                        paso = repositorio.Modificar(LlenaClase());
+                        Response.Write("<script>alert('Modificado');</script>");
+                    }
+                    else
+                        Response.Write("<script>alert('Id no existe');</script>");
+                }
+
+                if (paso)
+                {
+                    Limpiar();
+                }
+                else
+                    Response.Write("<script>alert('No se pudo guardar');</script>");
             }
-            else
-                Response.Write("<script>alert('No se pudo guardar');</script>");
         }
 
         protected void eliminarButton_Click(object sender, EventArgs e)

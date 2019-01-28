@@ -22,7 +22,7 @@
             <asp:TextBox ID="CriterioTextBox" AutoCompleteType="Disabled" class="form-control input-group" runat="server"></asp:TextBox>
         </div>
         <div class="col-lg-1 p-0">
-            <asp:LinkButton ID="buscarLinkButton" CssClass="btn btn-outline-success mt-4" runat="server">
+            <asp:LinkButton ID="buscarLinkButton" CssClass="btn btn-outline-success mt-4" runat="server" OnClick="buscarLinkButton_Click">
                 <span class="fas fa-search"></span>
                  Buscar
             </asp:LinkButton>
@@ -41,12 +41,13 @@
         </div>
     </div>
     <div class="form-row justify-content-center">
-        <asp:GridView ID="UsuarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="LightSkyBlue" />
+        <asp:GridView ID="UsuarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#669900" GridLines="None">
+            <AlternatingRowStyle BackColor="#996600" />
             <Columns>
                 <asp:BoundField DataField="UsuarioId" HeaderText="Usuario Id" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="Nombres" HeaderText="Nombre" />
+                <asp:BoundField DataField="NombreUsuario" HeaderText="UserName" />
                 <asp:BoundField DataField="NoTelefono" HeaderText="No. Telefónico" />
                 <asp:BoundField DataField="NoCelular" HeaderText="No. Celular" />
                 <asp:BoundField DataField="Email" HeaderText="Email" />

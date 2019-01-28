@@ -13,5 +13,19 @@ namespace ProyectoWebForm.Consultas
         {
 
         }
+
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
+        }
+
+        protected void buscarLinkButton_Click(object sender, EventArgs e)
+        {
+            UsuarioGridView.DataSource = BLL.Metodos.Buscar(ToInt(UsuarioGridView.SelectedIndex), CriterioTextBox.Text);
+            UsuarioGridView.DataBind();
+        }
     }
 }
