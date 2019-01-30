@@ -209,7 +209,7 @@ namespace ProyectoWebForm.Registros
                 if (usuario.UsuarioId == 0)
                 {
                     paso = repositorio.Guardar(usuario);
-                    Response.Write("<script>alert('Guardado');</script>");
+                    Utils.ShowToastr(this, "Guardado", "Correcto", "success");
                     Limpiar();
                 }
                 else
@@ -222,10 +222,10 @@ namespace ProyectoWebForm.Registros
                     if (user != null)
                     {
                         paso = repositorio.Modificar(LlenaClase());
-                        Response.Write("<script>alert('Modificado');</script>");
+                        Utils.ShowToastr(this, "Modificado", "Correcto", "success");
                     }
                     else
-                        Response.Write("<script>alert('Id no existe');</script>");
+                        Utils.ShowToastr(this, "Id no existe", "Correcto", "success");
                 }
 
                 if (paso)
@@ -233,7 +233,7 @@ namespace ProyectoWebForm.Registros
                     Limpiar();
                 }
                 else
-                    Response.Write("<script>alert('No se pudo guardar');</script>");
+                    Utils.ShowToastr(this, "No se pudo guardar", "Error", "error");
             }
         }
 
@@ -248,14 +248,14 @@ namespace ProyectoWebForm.Registros
             {
                 if (repositorio.Eliminar(id))
                 {
-                    Response.Write("<script>alert('Eliminado');</script>");
+                    Utils.ShowToastr(this, "Eliminado", "Correcto", "success");
                     Limpiar();
                 }
                 else
-                    Response.Write("<script>alert('No se pudo eliminar');</script>");
+                    Utils.ShowToastr(this, "No se pudo eliminar", "Error", "error");
             }
             else
-                Response.Write("<script>alert('No existe');</script>");
+                Utils.ShowToastr(this, "No existe", "Error", "error");
         }
     }
     
