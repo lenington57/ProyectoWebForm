@@ -132,7 +132,4 @@
             <!-- card.// -->
     </div>
     <br>
-    </div>
-</div>
-    </div>
 </asp:Content>

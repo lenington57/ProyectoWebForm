@@ -90,11 +90,6 @@ namespace ProyectoWebForm.Registros
                 usernameRequiredFieldValidator.Enabled = true;
                 paso = true;
             }
-            if (repositorio.GetList(filtro).Count() != 0)
-            {
-                Response.Write("<script>alert('Este UserName ya existe');</script>");
-                paso = true;
-            }
             if (String.IsNullOrWhiteSpace(noTelefonoTextBox.Text))
             {
                 noTelefonoRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
@@ -113,11 +108,49 @@ namespace ProyectoWebForm.Registros
                 emailRequiredFieldValidator.Enabled = true;
                 paso = true;
             }
-            if (repositorio.GetList(filtrar).Count() != 0)
+
+            if (ToInt(usuarioIdTextBox.Text) != 0)
             {
-                Response.Write("<script>alert('Este email ya existe');</script>");
-                paso = true;
+                string cadena = emailTextBox.Text;
+                string cad = emailTextBox.Text;
+                int comp = 0;
+                comp = String.Compare(s, ss);
+                if (comp != 0)
+                {
+                    if (repositorio.GetList(filtrar).Count() != 0)
+                    {
+                        Response.Write("<script>alert('Este email ya existe');</script>");
+                        paso = true;
+                    }
+                }
+                string cade = usernameTextBox.Text;
+                string caden = usernameTextBox.Text;
+                int compa = 0;
+                compa = String.Compare(s, ss);
+                if (compa != 0)
+                {
+                    if (repositorio.GetList(filtro).Count() != 0)
+                    {
+                        Response.Write("<script>alert('Este UserName ya existe');</script>");
+                        paso = true;
+                    }
+                }
             }
+
+            else if (ToInt(usuarioIdTextBox.Text) == 0)
+            {
+                if (repositorio.GetList(filtrar).Count() != 0)
+                {
+                    Response.Write("<script>alert('Este email ya existe');</script>");
+                    paso = true;
+                }
+                if (repositorio.GetList(filtro).Count() != 0)
+                {
+                    Response.Write("<script>alert('Este UserName ya existe');</script>");
+                    paso = true;
+                }
+            }
+            
             if (String.IsNullOrWhiteSpace(passwordTextBox.Text))
             {
                 passwordRequiredFieldValidator.ErrorMessage = "No puede estar vacío";
@@ -139,8 +172,9 @@ namespace ProyectoWebForm.Registros
             Usuario usuario = repositorio.Buscar(ToInt(usuarioIdTextBox.Text));
             if (usuario != null)
             {
-                nombreTextBox.Text = usuario.Nombres;
                 fechaTextBox.Text = usuario.Fecha.ToString();
+                nombreTextBox.Text = usuario.Nombres;
+                usernameTextBox.Text = usuario.NombreUsuario;
                 noTelefonoTextBox.Text = usuario.NoTelefono;
                 noCelularTextBox.Text = usuario.NoCelular;
                 emailTextBox.Text = usuario.Email;
@@ -180,10 +214,12 @@ namespace ProyectoWebForm.Registros
                 }
                 else
                 {
+                    Usuario user = new Usuario();
                     int id = ToInt(usuarioIdTextBox.Text);
-                    usuario = repositorio.Buscar(id);
+                    BLL.Repositorio<Usuario> repository = new BLL.Repositorio<Usuario>();
+                    usuario = repository.Buscar(id);
 
-                    if (usuario != null)
+                    if (user != null)
                     {
                         paso = repositorio.Modificar(LlenaClase());
                         Response.Write("<script>alert('Modificado');</script>");
