@@ -10,6 +10,7 @@
             <asp:Label Text="Filtro" class="text-success" runat="server" />
             <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
                 <asp:ListItem>Todo</asp:ListItem>
+                <asp:ListItem>Todo por fecha</asp:ListItem>
                 <asp:ListItem>UsuarioId</asp:ListItem>
                 <asp:ListItem>Email</asp:ListItem>
                 <asp:ListItem>Usuario</asp:ListItem>

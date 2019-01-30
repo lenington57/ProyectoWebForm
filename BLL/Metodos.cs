@@ -18,30 +18,33 @@ namespace BLL
             return retorno;
         }
 
-        public static List<Usuario> Buscar(int index, string criterio)
+        public static List<Usuario> Buscar(int id, int index, string criterio, DateTime desde, DateTime hasta)
         {
             Expression<Func<Usuario, bool>> filtro = p => true;
             Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
             List<Usuario> listUsuarios = new List<Usuario>();
-            int id = 0;
 
             switch (index)
             {
                 case 0://Todo
                     break;
 
-                case 1://UsuarioId
-                    id = Convert.ToInt32(criterio);
-                    filtro = p => p.UsuarioId == id;
+                case 1://Todo por fecha
+                    filtro = p => p.Fecha >= desde && p.Fecha <= hasta;
                     break;
 
-                case 2://Nombre
-                    filtro = p => p.Nombres.Contains(criterio);
+                case 2://UsuarioId
+                    filtro = p => p.UsuarioId == id && p.Fecha >= desde && p.Fecha <= hasta;
                     break;
-                case 3://Email
-                    filtro = p => p.Email.Contains(criterio);
+
+                case 3://Nombre
+                    filtro = p => p.Nombres.Contains(criterio) && p.Fecha >= desde && p.Fecha <= hasta;
+                    break;
+                case 4://Email
+                    filtro = p => p.Email.Contains(criterio) && p.Fecha >= desde && p.Fecha <= hasta;
                     break;
             }
+
             listUsuarios = repositorio.GetList(filtro);
 
             return listUsuarios;

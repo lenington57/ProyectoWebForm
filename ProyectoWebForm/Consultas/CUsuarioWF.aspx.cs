@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoWebForm.Utilitarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,11 @@ namespace ProyectoWebForm.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
         }
 
         private int ToInt(object valor)
@@ -24,7 +29,11 @@ namespace ProyectoWebForm.Consultas
 
         protected void buscarLinkButton_Click(object sender, EventArgs e)
         {
-            UsuarioGridView.DataSource = BLL.Metodos.Buscar(ToInt(UsuarioGridView.SelectedIndex), CriterioTextBox.Text);
+            int id = ToInt(CriterioTextBox.Text);
+            int index = ToInt(UsuarioGridView.SelectedIndex);
+            DateTime desde = Utils.ToDateTime(DesdeTextBox.Text);
+            DateTime hasta = Utils.ToDateTime(HastaTextBox.Text);
+            UsuarioGridView.DataSource = BLL.Metodos.Buscar(id, index, CriterioTextBox.Text, desde, hasta);
             UsuarioGridView.DataBind();
         }
     }
